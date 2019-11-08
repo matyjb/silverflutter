@@ -10,52 +10,61 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.red,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Pierwsze zajęcia!"),
-        ),
-        body: Container(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+          appBar: AppBar(
+            title: Text("Pierwsze zajęcia!"),
+          ),
+          body: Padding(
+          padding: EdgeInsets.all(10),
+          child: ListView(
             children: [
-              Padding(
-                padding: EdgeInsets.all(5),
-                child: Container(
-                color: Colors.grey,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: <Widget>[
-                        Row(
-                          children: <Widget>[
-                            Text("Silver"),
-                            Text(".NET", style: TextStyle(color: Colors.red),),
-                          ],
-                        ),
-                        Text(
-                          "Flutter jest spoko",
-                          style: TextStyle(color: Colors.red, fontSize: 25),
-                        )
-                      ],
-                    ),
-                    Image.asset("assets/silver.png"),
-                    RaisedButton(
-                      onPressed: () {},
-                      color: Colors.red,
-                      child: Text("button, ktory nic nie robi"),
-                    )
-                  ],
-                ),
+              Card(
+                color: Colors.white70,
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text("Opportunity"),
+                          FlatButton.icon(
+                            onPressed: () {},
+                            icon: Icon(Icons.star),
+                            label: Text("Star it"),
+                          ),
+                        ],
+                      ),
+                      Image.asset("assets/opportunity.jpg"),
+                    ],
+                  ),
                 ),
               ),
-              
-            ]
+              Card(
+                color: Colors.white70,
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text("Opportunity"),
+                          FlatButton.icon(
+                            onPressed: () {},
+                            icon: Icon(Icons.star),
+                            label: Text("Star it"),
+                          ),
+                        ],
+                      ),
+                      Image.asset("assets/opportunity.jpg"),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
-      ),
-      ),
+          ),
     );
   }
 }
