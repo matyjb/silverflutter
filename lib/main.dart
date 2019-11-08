@@ -40,6 +40,28 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
               ),
+              Card(
+                color: Colors.white70,
+                child: Padding(
+                  padding: EdgeInsets.all(10),
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text("Opportunity"),
+                          FlatButton.icon(
+                            onPressed: () {},
+                            icon: Icon(Icons.star),
+                            label: Text("Star it"),
+                          ),
+                        ],
+                      ),
+                      Image.asset("assets/opportunity.jpg"),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
