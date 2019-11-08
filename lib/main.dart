@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Padding(
           padding: EdgeInsets.all(10),
-          child: Column(
+          child: ListView(
             children: [
               Card(
                 color: Colors.white70,
