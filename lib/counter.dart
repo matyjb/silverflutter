@@ -7,19 +7,34 @@ class Counter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CounterBloc,CounterState>(
-      builder: (context, state) => Center(
+    final CounterBloc counterBloc = BlocProvider.of<CounterBloc>(context);
+
+    // return BlocBuilder<CounterBloc, CounterState>(
+    //   builder: (context, state) =>
+       return Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            IconButton(icon: Icon(Icons.add_circle),onPressed: (){},),
-            IconButton(icon: Icon(Icons.add),onPressed: (){},),
-            Text(state.value.toString()),
-            IconButton(icon: Icon(Icons.remove),onPressed: (){},),
-            IconButton(icon: Icon(Icons.remove_circle),onPressed: (){},),
+            IconButton(
+              icon: Icon(Icons.add_circle),
+              onPressed: () => counterBloc.add(Add10Event()),
+            ),
+            IconButton(
+              icon: Icon(Icons.add),
+              onPressed: () => counterBloc.add(IncrementEvent()),
+            ),
+            Text(counterBloc.state.value.toString()),
+            IconButton(
+              icon: Icon(Icons.remove),
+              onPressed: () => counterBloc.add(DecrementEvent()),
+            ),
+            IconButton(
+              icon: Icon(Icons.remove_circle),
+              onPressed: () => counterBloc.add(Subtract10Event()),
+            ),
           ],
         ),
-      ),
+      // ),
     );
   }
 }
